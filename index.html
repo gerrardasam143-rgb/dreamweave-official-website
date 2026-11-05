@@ -7,6 +7,10 @@
 
    <title>DREAMWEAVE | Where Comfort Meets Beautiful Living</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
     <!-- Connect our CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -39,7 +43,7 @@
 
     <!-- Homepage -->
     <section id="home">
-        <h2>Welcome to DREAMWEAVE</h2>
+        <h2>Welcome to DREAMWAVE</h2>
 
         <p>
             Your trusted destination for quality bedding,
@@ -49,95 +53,61 @@
         <a href="#shop" class="shop-btn">Shop Now</a>
     </section>
 
+    <section id="shop">
     <!-- PRODUCT CATALOGUE -->
-<section id="shop">
+<h2>Explore Our Collections</h2>
 
-  <h2>Explore Our Collection</h2>
+<p>
+    Discover beautiful designs and varieties
+    carefully selected to make your home special.
+</p>
 
-  <p>
-    Thoughtfully selected home essentials to bring
-    comfort, beauty, and elegance into your space.
-  </p>
+<!-- COLLECTION MENU -->
+<div id="collection-menu" class="collection-container">
 
-  <div class="product-container">
-
-    <!-- Product 1 -->
-    <div class="product-card">
-      <img src="images/Bedsheet.jpg" alt="Double Bedsheets">
-
-      <h3>Double Bedsheets</h3>
-
-      <p>Beautiful, comfortable bedsheets for restful nights.</p>
-
-      <p class="price">GH₵ 100.00</p>
-
-      <button onclick="orderProduct('Double Bedsheets', 100)">
-        Order Now
-      </button>
+    <div class="collection-card" onclick="showCollection('bedsheets')">
+        <img src="images/Bedsheet.jpg" alt="Bedsheets">
+        <h3>Bedsheets</h3>
+        <p>Explore our bedsheet varieties</p>
     </div>
 
-    <!-- Product 2 -->
-    <div class="product-card">
-      <img src="images/Curtain.jpg" alt="Window Curtains">
-
-      <h3>Window Curtains</h3>
-
-      <p>Elegant curtains that add warmth and style to your home.</p>
-
-      <p class="price">GH₵ 200.00</p>
-
-      <button onclick="orderProduct('Window curtains', 200)">
-        Order Now
-      </button>
+    <div class="collection-card" onclick="showCollection('curtains')">
+        <img src="images/Curtain.jpg" alt="Curtains">
+        <h3>Curtains</h3>
+        <p>Discover beautiful curtain designs</p>
     </div>
 
-    <!-- Product 3 -->
-    <div class="product-card">
-      <img src="images/Pillow.jpg" alt="Soft Pillows">
-
-      <h3>Soft Pillows</h3>
-
-      <p>Soft, supportive pillows made for peaceful sleep.</p>
-
-      <p class="price">GH₵ 60.00</p>
-
-      <button onclick="orderProduct('Soft Pillows', 60)">
-        Order Now
-      </button>
+    <div class="collection-card" onclick="showCollection('blinds')">
+        <img src="images/Blinds grey.jpeg" alt="Blinds Curtains">
+        <h3>Blinds Curtains</h3>
+        <p>Discover stylish blinds curtains for your home</p>
     </div>
 
-    <!-- Product 4 -->
-    <div class="product-card">
-      <img src="images/Comforter.jpg" alt="Luxury Comforters">
-
-      <h3>Luxury Comforters</h3>
-
-      <p>Wrap yourself in warmth and everyday luxury.</p>
-
-      <p class="price">GH₵ 300.00</p>
-
-
-      <button onclick="orderProduct('Luxury Comforters', 300)">
-        Order Now
-      </button>
+    <div class="collection-card" onclick="showCollection('carpets')">
+        <img src="images/Fluffy Carpet.jpeg" alt="Fluffy carpets">
+        <h3>Fluffy Carpets</h3>
+        <p>Add softness and warmth to your home</p>
     </div>
 
-    <!-- Product 5 -->
-    <div class="product-card">
-      <img src="Kingsize.jpeg" alt="King Size Bedsheets">
+</div>
 
-      <h3>King Size Bedsheets</h3>
+<!-- SELECTED COLLECTION PRODUCTS -->
+<div id="collection-products" style="display: none;">
 
-      <p>Premium king size bedsheets designed for comfort and elegance.</p>
+    <button onclick="backToCollections()" class="back-btn">
+        ← Back to Collections
+    </button>
 
-      <p class="price">GH₵ 120.00</p>
+    <h2 id="collection-title"></h2>
 
-      <button onclick="orderProduct('King Size Bedsheets', 120)">
-        Order Now
-      </button>
+    <p id="collection-description"></p>
+
+    <div id="collection-product-grid" class="product-container">
     </div>
 
-</section>
+</div>
+
+    </section>
 
   <!-- ABOUT US SECTION -->
 
@@ -154,7 +124,7 @@
 
         <p>
             We offer a beautiful collection of quality
-            bedsheets, curtains, pillows, comforters,
+            bedsheets, curtains, blinds, fluffy carpets,
             and other home essentials designed to
             transform your living space.
         </p>
@@ -186,22 +156,27 @@
         <h3>DREAMWAVE</h3>
 
         <p>
-            WhatsApp: 0530265065
-        </p>
-
-        <p>
             Send us a message for product enquiries,
             availability, and orders.
         </p>
 
-        <a
-            href="https://wa.me/233530265065"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="whatsapp-btn"
-        >
-            Chat With Us on WhatsApp
-        </a>
+        <div class="social-links" aria-label="Connect with DREAMWEAVE">
+            <a class="social-icon tiktok-icon" href="https://www.tiktok.com/@_dreamweave13"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Visit DREAMWEAVE on TikTok" title="TikTok">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path class="tiktok-shadow" d="M19.6 8.2a7.2 7.2 0 0 1-4.2-1.4v7.1a6.1 6.1 0 1 1-5.3-6.1v3.5a2.7 2.7 0 1 0 1.8 2.6V2.5h3.5a7.2 7.2 0 0 0 4.2 4.3z"/>
+                    <path class="tiktok-mark" d="M19.6 8.2a7.2 7.2 0 0 1-4.2-1.4v7.1a6.1 6.1 0 1 1-5.3-6.1v3.5a2.7 2.7 0 1 0 1.8 2.6V2.5h3.5a7.2 7.2 0 0 0 4.2 4.3z"/>
+                </svg>
+            </a>
+            <a class="social-icon whatsapp-icon" href="https://wa.me/233530265065"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Chat with DREAMWEAVE on WhatsApp" title="WhatsApp">
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                    <path d="M16 .8A15.1 15.1 0 0 0 3 23.6L.8 31.2l7.8-2A15.2 15.2 0 1 0 16 .8zm0 27.5a12.3 12.3 0 0 1-6.3-1.7l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.4 12.4 0 1 1 16 28.3zm6.8-9.3c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2 0-.5 0-.7l-1.2-2.8c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5s-1.3 1.3-1.3 3.1l1.3 4.3c.3.6 2.6 4.7 6.3 6.5.9.4 1.6.7 2.2.9.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5z"/>
+                </svg>
+            </a>
+        </div>
 
     </div>
 
@@ -240,13 +215,23 @@
 
             <h3>Get In Touch</h3>
 
-            <p>WhatsApp: 0530265065</p>
-
-            <a href="https://wa.me/233530265065"
-               target="_blank"
-               rel="noopener noreferrer">
-                Chat on WhatsApp
-            </a>
+            <div class="social-links" aria-label="Connect with DREAMWEAVE">
+                <a class="social-icon tiktok-icon" href="https://www.tiktok.com/@_dreamweave13"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Visit DREAMWEAVE on TikTok" title="TikTok">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path class="tiktok-shadow" d="M19.6 8.2a7.2 7.2 0 0 1-4.2-1.4v7.1a6.1 6.1 0 1 1-5.3-6.1v3.5a2.7 2.7 0 1 0 1.8 2.6V2.5h3.5a7.2 7.2 0 0 0 4.2 4.3z"/>
+                        <path class="tiktok-mark" d="M19.6 8.2a7.2 7.2 0 0 1-4.2-1.4v7.1a6.1 6.1 0 1 1-5.3-6.1v3.5a2.7 2.7 0 1 0 1.8 2.6V2.5h3.5a7.2 7.2 0 0 0 4.2 4.3z"/>
+                    </svg>
+                </a>
+                <a class="social-icon whatsapp-icon" href="https://wa.me/233530265065"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Chat with DREAMWEAVE on WhatsApp" title="WhatsApp">
+                    <svg viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 .8A15.1 15.1 0 0 0 3 23.6L.8 31.2l7.8-2A15.2 15.2 0 1 0 16 .8zm0 27.5a12.3 12.3 0 0 1-6.3-1.7l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.4 12.4 0 1 1 16 28.3zm6.8-9.3c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2 0-.5 0-.7l-1.2-2.8c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5s-1.3 1.3-1.3 3.1l1.3 4.3c.3.6 2.6 4.7 6.3 6.5.9.4 1.6.7 2.2.9.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5z"/>
+                    </svg>
+                </a>
+            </div>
 
         </div>
 
